@@ -7,7 +7,7 @@ import { client } from "@/sanity/lib/client";
 const builder = imageUrlBuilder(client);
 import AllPostsSkeleton from "@/app/ui/Skeleton/AllPostsSkeleton";
 
-const urlFor = (source: any) => {
+const urlFor = (source: string) => {
   return builder.image(source).width(309).height(370).fit("crop").url();
 };
 export default function AllPostsSection({

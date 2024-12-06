@@ -8,7 +8,7 @@ import { client } from "@/sanity/lib/client";
 const builder = imageUrlBuilder(client);
 import { format } from 'date-fns'
 
-const urlFor = (source: any) => {
+const urlFor = (source: string) => {
   return builder.image(source).width(309).height(500).fit("crop").url();
 };
 export default function HealthWellnesMain({
@@ -70,8 +70,8 @@ export default function HealthWellnesMain({
                   .image(healthWellnessPost.authorImage)
                   .width(50)
                   .height(50)
-                  .url()}
-                alt={healthWellnessPost.title}
+                  .url() ||"/3d-view-personal-computer-with-vegetation.jpg"}
+                alt={healthWellnessPost.title ||'Untitled Image'}
                 width={50}
                 height={50}
                 className="rounded-full"

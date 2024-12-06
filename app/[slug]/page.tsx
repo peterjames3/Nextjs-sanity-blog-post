@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 // Server Component to fetch and render the post data based on slug
-const PostPage = async ({ params } :{params:any}) => {
+const PostPage = async ({ params } :{params:string}) => {
   const { slug } =  await params;
 
  

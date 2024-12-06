@@ -1,12 +1,12 @@
 'use client';
 import {
     RiInstagramFill,
-    RiYoutubeFill,
+  
     RiTwitterFill,
-    RiLinkedinFill,
+    
     RiFacebookFill,
   } from "react-icons/ri";
-  import { FaCameraRetro } from "react-icons/fa";
+  
   import Link from "next/link";
 
 export default function Footer(){

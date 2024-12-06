@@ -8,7 +8,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
-const urlFor = (source: any) => {
+const urlFor = (source: string) => {
   return builder.image(source).width(309).height(300).fit("crop").url();
 };
 export default async function RecentPostsSection() {

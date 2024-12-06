@@ -10,7 +10,7 @@ import { format } from 'date-fns';
 const builder = imageUrlBuilder(client);
 
 // Helper function to generate image URLs
-const urlFor = (source: any) => {
+const urlFor = (source: string) => {
   return builder.image(source).width(300).height(235).fit('crop').url();
 };
 
