@@ -28,7 +28,7 @@ export default function Navbar() {
         <ul className="hidden sm:flex gap-6 items-center">
           {NavLinks.map((link) => (
             <li key={link.name}>
-              <Link href={link.href} className={ `text-[1.15rem] font-medium text-white hover:text-gray-500 ${pathname === link.path ? ' dark:text-white font-semibold':" font-medium dark:text-white"}` 
+              <Link href={link.href} className={ `text-[1.15rem] font-medium text-white hover:text-gray-500 ${pathname === link.href ? ' dark:text-white font-semibold':" font-medium dark:text-white"}` 
           }>{link.name}</Link>
             </li>
           ))}
