@@ -21,7 +21,11 @@ export const metadata: Metadata = {
   },
   description: "Dive into tutorials, tips, and the latest trends in Technology and Health & Wellness.",
   keywords:['Hanzo blog', 'Health & Wellness Tips', "Trending Technologies"],
+  verification:{
+     google:"wrzLQ7Crsgwz29J2pMyUCIDU0eRwwrHp_NhOt-OIdSY"
+  }
 }
+
 export default function RootLayout({
   children,
 }: Readonly<{
