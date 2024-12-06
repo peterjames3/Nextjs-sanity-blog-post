@@ -11,8 +11,7 @@ export default async function HealthWellness(){
     try {
         healthWellnessPosts = await sanityFetch<SanityDocument[]>({
           query: healthWellnessPostsQuery,
-          retries: 5, 
-          delay: 5000, 
+           
         });
       } catch (error) {
         console.log(`Error Fetching healthWellnessPosts: ${error}`);

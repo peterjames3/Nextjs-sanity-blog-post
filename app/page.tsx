@@ -14,8 +14,7 @@ export default async function Home() {
   try {
     latestPosts = await sanityFetch<SanityDocument[]>({
       query: latestPostsQuery,
-      retries: 5, // Optional: Number of retry attempts
-      delay: 1500, // Optional: Delay in milliseconds between retries
+      
     });
   } catch (error) {
     console.log(`Error Fetching healthWellnessPosts: ${error}`);

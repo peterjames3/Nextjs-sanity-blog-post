@@ -13,8 +13,7 @@ export default async function NewsExpert() {
   try {
     newsExpertPosts = await sanityFetch<SanityDocument[]>({
       query: newsExpertPostsQuery,
-      retries: 5, // Optional: Number of retry attempts
-      delay: 5000, // Optional: Delay in milliseconds between retries
+      
     });
   } catch (error) {
     console.log(`Error Fetching newsExpertPosts: ${error}`);

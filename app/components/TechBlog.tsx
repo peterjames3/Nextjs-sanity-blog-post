@@ -14,8 +14,7 @@ let techPosts : SanityDocument[] =[];
   try {
     techPosts = await sanityFetch<SanityDocument[]>({
       query: techPostsQuery,
-      retries: 5, // Optional: Number of retry attempts
-      delay: 5000, // Optional: Delay in milliseconds between retries
+      
     });
   } catch (error) {
     console.log(`Error Fetching healthWellnessPosts: ${error}`);
@@ -37,7 +36,7 @@ let techPosts : SanityDocument[] =[];
             techPosts && techPosts.length > 0 ? (
               <MainTechBlogSection techPosts={techPosts} />
             ):(
-              <p className="text-center text-white py-10">No Main tech blog posts found. Please check back later</p>
+              <p className="text-center text-gray-600 py-10">No Main tech blog posts found. Please check back later</p>
             )
           }
           
@@ -51,7 +50,7 @@ let techPosts : SanityDocument[] =[];
             techPosts && techPosts.length > 0 ? (
               <MainLeftTechBlogSection techPosts={techPosts} />
             ):(
-              <p className="text-center text-white py-10">No Additional tech blog posts found. Please check back later</p>
+              <p className="text-center text-gray-600 py-10">No Additional tech blog posts found. Please check back later</p>
             )
           }
          
@@ -65,7 +64,7 @@ let techPosts : SanityDocument[] =[];
             techPosts && techPosts.length > 0 ? (
               <LowerTechBlogSection techPosts={techPosts} />
             ):(
-              <p className="text-center text-white py-10">No related tech blog posts found. Please check back later</p>
+              <p className="text-center text-gray-600 py-10">No related tech blog posts found. Please check back later</p>
             )
           }
          
