@@ -5,33 +5,36 @@ import Post from "@/app/components/Post";
 import { client } from '@/sanity/lib/client';
 import { notFound } from 'next/navigation';
 
-// Set revalidation interval for ISR
 export const revalidate = 60;
 
-// Use generateStaticParams to define paths for static generation
 export async function generateStaticParams() {
-
   const posts = await client.fetch(postPathsQuery);
+  const reservedRoutes = ['about', 'home'];
 
-  const reservedRoutes = ['about',  'home'];
-  return posts.filter((post: { slug: string }) => !reservedRoutes.includes(post.slug));
+  return posts
+    .filter((post: { slug: string }) => !reservedRoutes.includes(post.slug))
+    .map((post: { slug: string }) => ({
+      params: { slug: post.slug },
+    }));
 }
 
-// Server Component to fetch and render the post data based on slug
-const PostPage = async ({ params } :{params:{slug: string} }) => {
-  const { slug } =  await params;
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
 
- 
+const PostPage = async ({ params }: PageProps) => {
+  const { slug } = params;
+
   const post = await sanityFetch<SanityDocument>({
     query: postQuery,
     params: { slug },
   });
 
-  // Fallback rendering if post data is missing
   if (!post) {
-    notFound()
+    notFound();
   }
-
 
   return <Post post={post} />;
 };
