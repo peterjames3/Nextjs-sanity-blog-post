@@ -13,12 +13,12 @@ export async function generateStaticParams() {
 
   const posts = await client.fetch(postPathsQuery);
 
-  const reservedRoutes = ['about', 'contact', 'home'];
+  const reservedRoutes = ['about',  'home'];
   return posts.filter((post: { slug: string }) => !reservedRoutes.includes(post.slug));
 }
 
 // Server Component to fetch and render the post data based on slug
-const PostPage = async ({ params } :{params:string}) => {
+const PostPage = async ({ params } :{params:{slug: string} }) => {
   const { slug } =  await params;
 
  

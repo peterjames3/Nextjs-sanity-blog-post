@@ -24,11 +24,11 @@ if(latestPosts.length === 0){
 }
 
   // Pre-format the posts
-  const formattedPosts = latestPosts.map((post) => ({
-    ...post,
-    formattedDate: format(new Date(post._createdAt), "MM/dd/yyyy"),
-  }));
-console.log(formattedPosts)
+  // const formattedPosts = latestPosts.map((post) => ({
+  //   ...post,
+  //   formattedDate: format(new Date(post._createdAt), "MM/dd/yyyy"),
+  // }));
+
 
   return (
     <Carousel
