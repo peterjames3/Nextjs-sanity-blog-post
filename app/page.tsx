@@ -20,8 +20,6 @@ export default async function Home() {
     console.log(`Error Fetching healthWellnessPosts: ${error}`);
   }
 
-
-
   
 
   // const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });

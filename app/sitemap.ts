@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap{
             priority: 1,
           },
           {
-            url: 'https://nextjs-sanity-blog-post-vowd.vercel.app//about',
+            url: 'https://nextjs-sanity-blog-post-vowd.vercel.app/about',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
